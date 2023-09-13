@@ -1,0 +1,7 @@
+#index:
+#    path: /
+#    controller: App\Controller\DefaultController::index
+
+notify_send:
+    path: /send
+    controller: App\Controller\NotifyController::send
