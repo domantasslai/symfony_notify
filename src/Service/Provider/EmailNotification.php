@@ -54,9 +54,11 @@ class EmailNotification implements NotificationInterface
                 ],
             ]);
 
+            $sourceEmail = ''; // fill with valid email
+
             // Send the email notification using Amazon SES.
             $sesClient->sendEmail([
-                'Source' => 'domantasslai@gmail.com',
+                'Source' => $sourceEmail,
                 'Destination' => [
                     'ToAddresses' => [$this->recipient],
                 ],

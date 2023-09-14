@@ -30,9 +30,12 @@ class NotifyController extends AbstractController
     #[Route('/send', name: 'send', methods: ['GET'])]
     public function send(EntityManagerInterface $entityManager, UserRepository $userRepository, NotificationRepository $notificationRepository): Response
     {
+        $email = ''; // fill with valid email
+        $phone = ''; // fill with valid phone number
+
         $user = $userRepository->findByEmailOrCreate(
-            'domantasslai@gmail.com',
-            ['phone_number' => '+37067924162'],
+            $email,
+            ['phone_number' => $phone],
             $entityManager
         );
 
